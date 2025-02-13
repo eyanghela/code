@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Quiz 💖</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fff8dc;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Popup Quiz Box */
+        .quiz-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+        }
+
+        /* Overlay (Background Dim) */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ffdb4d;
+        }
+
+        /* Result Message */
+        #resultMessage {
+            display: none;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4081;
+            margin-top: 20px;
+        }
+
+        /* Video Styling */
+        .video-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        /* Confetti Canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 600px) {
+            .quiz-container, .video-container {
+                width: 95%;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Start Quiz Button -->
+    <button id="startQuiz">Start Love Quiz 💕</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Quiz Popup -->
+    <div class="quiz-container" id="quizBox">
+        <h3>Love Quiz 💖</h3>
+        <p>1. what is our first call sign? </p>
+        <input type="text" id="q1"><br>
+
+        <p>2. date of our first convo? what month and day? </p>
+        <input type="text" id="q2"><br>
+
+        <p>3. what color was i wearing when we first video call? </p>
+        <input type="text" id="q3"><br>
+
+        <button id="submitQuiz">Submit</button>
+    </div>
+
+    <!-- Result Message -->
+    <div id="resultMessage">🎉 ILY! You got it right! 🎉</div>
+
+    <!-- Video Popup -->
+    <div class="video-container" id="videoContainer">
+        <video id="loveVideo" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+    <script>
+        document.getElementById("startQuiz").addEventListener("click", function() {
+            document.getElementById("quizBox").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        });
+
+        document.getElementById("submitQuiz").addEventListener("click", function(event) {
+            event.preventDefault(); // Stop form from reloading the page
+
+            let correctAnswers = {
+                q1: "Adi",  // Adjust answers as needed
+                q2: "August 29", 
+                q3: "Blue" // Adjust based on your actual song
+            };
+
+            let userAnswers = {
+                q1: document.getElementById("q1").value.trim(),
+                q2: document.getElementById("q2").value.trim(),
+                q3: document.getElementById("q3").value.trim()
+            };
+
+            if (userAnswers.q1.toLowerCase() === correctAnswers.q1.toLowerCase() &&
+                userAnswers.q2.toLowerCase() === correctAnswers.q2.toLowerCase() &&
+                userAnswers.q3.toLowerCase() === correctAnswers.q3.toLowerCase()) {
+                
+                // Hide quiz and overlay
+                document.getElementById("quizBox").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+
+                // Show love message
+                document.getElementById("resultMessage").style.display = "block";
+
+                // Show video in center
+                let videoContainer = document.getElementById("videoContainer");
+                videoContainer.style.display = "block";
+                
+                let video = document.getElementById("loveVideo");
+                video.play();
+
+                // Confetti effect
+                let confettiSettings = { target: 'confettiCanvas' };
+                let confetti = new ConfettiGenerator(confettiSettings);
+                confetti.render();
+
+            } else {
+                alert("Oops! Try again 💕");
+            }
+        });
+
+    </script>
+
+</body>
+</html>

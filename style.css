@@ -1,0 +1,436 @@
+/* 💛 GENERAL STYLES */
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ffde59, #ffcc00);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* 🌟 NAVIGATION */
+nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: rgba(255, 204, 0, 0.9);
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #ff5733;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 💖 LOCK SCREEN */
+#lock-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff5cc;
+}
+
+.heart-container {
+    background: #ffcc00;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.heart-container:hover {
+    transform: scale(1.1);
+}
+
+input {
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: #ff5733;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e74c3c;
+}
+
+/* 🏆 MAIN CONTENT */
+.hidden {
+    display: none;
+}
+
+section {
+    border: 2px solid #f1c40f;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    color: #f39c12;
+    font-size: 1.6em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Hover effect for images */
+.photo-grid img {
+    transition: transform 0.3s ease-in-out, filter 0.3s;
+    border-radius: 10px;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Smooth scroll animation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 📱 RESPONSIVENESS */
+@media (max-width: 768px) {
+    /* Navigation Bar */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #ffcc00;
+        position: absolute;
+        top: 60px; left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Heart Container and Inputs */
+    .heart-container {
+        padding: 20px;
+        width: 130px;
+        height: 130px;
+    }
+
+    input {
+        font-size: 16px;
+        width: 80%;
+    }
+
+    button {
+        padding: 10px 18px;
+    }
+
+    /* Section Styles for Small Screens */
+    section {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.4em;
+    }
+}
+
+/* 🌹 ANIMATED BUTTONS AND LINKS */
+button, .nav-links a {
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+}
+
+button:hover, .nav-links a:hover {
+    transform: translateY(-5px);
+}
+
+/* 💖 CUTE HEART CURSOR */
+body {
+    cursor: url('heart-cursor.png'), auto;
+}
+/* 💖 Floating Hearts Animation */
+@keyframes float-hearts {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    font-size: 30px;
+    color: #ffcc00;
+    animation: float-hearts 10s ease-in-out infinite;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 💛 SIDE MENU STYLES */
+#side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: rgba(255, 204, 0, 0.95); /* Yellow with transparency */
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+    padding-top: 60px;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+/* MENU BUTTON */
+#menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: gold;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1100;
+}
+
+#menu-btn:hover {
+    background: orange;
+}
+
+/* CLOSE BUTTON */
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: red;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* NAVIGATION LINKS */
+#side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#side-menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+#side-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#side-menu ul li a:hover {
+    background: white;
+    color: gold;
+    box-shadow: 0px 0px 10px white;
+}
+/* 💛 HEART CURSOR */
+body {
+    cursor: url('heart-cursor.png'), auto; /* Use a heart icon for the cursor */
+}
+
+/* 💛 POPPING HEART EFFECT */
+.heart-pop {
+    position: absolute;
+    font-size: 20px;
+    color: red;
+    animation: pop 0.6s ease-out forwards;
+}
+
+@keyframes pop {
+    0% {
+        opacity: 1;
+        transform: scale(0.6) translateY(0);
+    }
+    50% {
+        transform: scale(1.2) translateY(-15px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-30px);
+    }
+}
+/* ✨ Glowing Effect for Passcode Input & Button */
+#passcode {
+    border: 2px solid gold;
+    box-shadow: 0 0 10px gold;
+    transition: all 0.3s ease-in-out;
+}
+
+#passcode:focus {
+    box-shadow: 0 0 15px #ffcc00;
+}
+
+button:hover {
+    box-shadow: 0 0 10px #ff5733;
+}
+
+/* ✨ Floating Hearts Animation */
+@keyframes floating-hearts {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-150px); opacity: 0; }
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 25px;
+    color: red;
+    animation: floating-hearts 2s ease-in-out infinite;
+}
+
+/* ✨ Lightbox for Gallery */
+.photo-grid img {
+    transition: transform 0.3s ease-in-out, filter 0.3s;
+    cursor: pointer;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+img {
+    width: 80%;
+    max-width: 250px; /* Adjust as needed */
+    height: auto; /* Keep proportions */
+    border-radius: 10px;
+}
+
+
+/* ✨ Sidebar Smooth Slide */
+#side-menu {
+    transition: left 0.4s ease-in-out;
+}
+
+/* ✨ Easter Egg Feature */
+.hidden-heart {
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.7;
+}
+.hidden-heart:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+/* Hide the video initially */
+.hidden {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style the video */
+#loveVideo {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 223, 0, 0.8);
+}
+.gift-box {
+    font-size: 3rem;
+    cursor: pointer;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.gift-box.open {
+    animation: openBox 0.5s forwards;
+}
+
+@keyframes openBox {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2) rotate(10deg); }
+}
+
+.hearts {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatUp 2s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-50px); }
+}

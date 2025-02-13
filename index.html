@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's, Love! 💛</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- 💛 PASSCODE ENTRY -->
+    <div id="lock-screen">
+        <div class="heart-container">
+            <input type="password" id="passcode" placeholder="Enter the passcode">
+            <button onclick="unlockSite()">💛 Unlock</button>
+        </div>
+        <p id="error-message"></p>
+    </div>
+
+    <!-- 💖 MAIN CONTENT (Hidden Until Unlocked) -->
+    <div id="content" class="hidden">
+        <!-- 💛 SIDE NAVIGATION MENU -->
+        <div id="side-menu">
+            
+            <ul>
+                <li><a href="#love-letter">💌 Love Letter</a></li>
+                <li><a href="#timeline">⏳ Our Love Story</a></li>
+                <li><a href="#gallery">📸 Memories</a></li>
+                <li><a href="#playlist">🎶 Playlist</a></li>
+                <li><a href="#love-notes">💛 Love Notes</a></li>
+                <li><a href="#love-quiz">❣️ Love Quiz</a></li>
+                <li><a href="#hidden-surprise">🎁 Surprise</a></li>
+            </ul>
+        </div>
+        <button id="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+        
+        <header>
+            <h1>Happy Valentine's, HUNHUN! 💛</h1>
+        </header>
+
+        <section id="love-letter">
+            <h2>💌 Love Letter</h2>
+            <p> I just want to remind you how much I love you. 💛 These past two years with you have been the most precious, and I wouldn’t trade them for anything.
+
+                My Adi, my Hunby, my love—thank you for always taking care of me, for your endless patience, for understanding me even when I’m difficult, and for loving me in the purest, most unconditional way. You are my safe place, my happiness, my heart.
+                
+                I love you, always and forever. 💛✨ </p>
+        </section>
+
+        <section id="timeline">
+            <h2>⏳ Our Love Story</h2>
+            <ul>
+                <li>❤️ August 2022 when we first have interaction</li>
+                <li>💛 June 12, 2023 - We first met!</li>
+                <li>💖  Two years of love, laughter, and countless memories with you—yet my heart still races at the thought of forever by your side. Every moment we've shared has only deepened my love for you, and I can't wait for the day when I get to call myself your wife. Here's to us, to our journey, and to a lifetime of love still ahead. 💛 </li>
+            </ul>
+        </section>
+
+        <section id="gallery">
+            <h2>📸 Our Memories</h2>
+            <div class="photo-grid">
+                <img src="photo1.jpg" alt="Us together">
+                <img src="photo2.jpg" alt="A special moment">
+                <img src="photo3.jpg" alt="Another beautiful memory">
+            </div>
+        </section>
+        
+        <section id="playlist">
+            <h2>🎶 Our Love Playlist</h2>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3PDbVtvFEh4fHSu5Gndf5H?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="
+            " allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</iframe>
+
+
+        <section id="love-notes">
+            <h2>💌 Reasons Why I Love You</h2>
+            <p id="love-note-text">Click below for a random reason! 💛</p>
+            <button onclick="generateLoveNote()">💖 Surprise Me!</button>
+        </section>
+
+        <section id="love-quiz">
+            <h2>❣️ Love Quiz</h2>
+            <p>Let's see how well you know our love story! 💛</p>
+            <button id="openQuiz">Take the Love Quiz 💛</button>
+
+            <script>
+            document.getElementById("openQuiz").addEventListener("click", function () {
+                window.open("love_quiz.html", "LoveQuiz", "width=400,height=500");
+            });
+            </script>
+        </section>
+
+        <section id="hidden-surprise">
+            <h2>🎁 A Little Surprise</h2>
+            <p>Click the gift box to reveal something special! 🎀</p>
+            <div class="gift-box" onclick="revealSurprise()">🎁</div>
+            <p id="surprise-message"></p>
+            <audio id="voiceMessage" src="surprise_message.mp3"></audio>
+        </section>
+        
+        
+       
+    </div>
+     <footer>
+            <p>Made with 💛 just for my Prince Art.</p>
+        </footer>
+</body>
+</html>
